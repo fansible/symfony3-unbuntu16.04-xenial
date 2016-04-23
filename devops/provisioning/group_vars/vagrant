@@ -8,6 +8,7 @@ mysql_users:
   - name: vagrant
     pass: vagrant
 # List of databases to be created
+
 postgresql_databases:
   - name: vagrant
     hstore: yes

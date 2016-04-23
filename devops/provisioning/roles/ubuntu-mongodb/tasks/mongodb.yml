@@ -1,0 +1,9 @@
+---
+
+- include: install.deb.yml
+
+- include: configure.yml
+  when: mongodb_install
+
+- include: mms-agent.yml
+  when: mongodb_mms_api_key != ""

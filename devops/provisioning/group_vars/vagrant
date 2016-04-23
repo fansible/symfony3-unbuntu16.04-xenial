@@ -1,0 +1,25 @@
+---
+
+dev_env: true
+mysql_databases:
+  - name: vagrant
+
+mysql_users:
+  - name: vagrant
+    pass: vagrant
+# List of databases to be created
+postgresql_databases:
+  - name: vagrant
+    hstore: yes
+    uuid_ossp: yes
+
+# List of users to be created
+postgresql_users:
+  - name: vagrant
+    pass: vagrant
+
+postgresql_user_privileges:
+  - name: vagrant
+    db: vagrant
+    priv: "ALL"
+    role_attr_flags: "SUPERUSER"

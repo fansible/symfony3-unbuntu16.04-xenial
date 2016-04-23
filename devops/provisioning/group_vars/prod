@@ -1,0 +1,25 @@
+---
+
+dev_env: true
+mysql_databases:
+  - name: CHANGE_IT_prod-staging_db_name
+
+mysql_user:
+  - name: CHANGE_IT_prod-staging_user_db
+    pass: CHANGE_IT_prod-staging_password_db
+# List of databases to be created
+postgresql_databases:
+  - name: CHANGE_IT_prod-staging_db_name
+    hstore: yes
+    uuid_ossp: yes
+
+# List of users to be created
+postgresql_users:
+  - name: CHANGE_IT_prod-staging_user_db
+    pass: CHANGE_IT_prod-staging_password_db
+
+postgresql_user_privileges:
+  - name: CHANGE_IT_prod-staging_user_db
+    db: CHANGE_IT_prod-staging_db_name
+    priv: "ALL"
+    role_attr_flags: "SUPERUSER"

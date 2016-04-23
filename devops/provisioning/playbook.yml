@@ -1,0 +1,25 @@
+---
+
+- name: Provisioning symfony-ubuntu-xenial64
+  hosts: all
+  become: true
+  vars_files:
+    - vars/main.yml
+    - vars/ubuntu-xdebug.yml
+
+  roles:
+    - ubuntu-apt
+    - create-www-data-user
+    - ubuntu-php
+    - composer
+    - ubuntu-symfony-nginx
+    - ubuntu-mysql
+    - ubuntu-postgresql
+    - ubuntu-mongodb
+
+- name: Vagrant provisioning
+  hosts: vagrant
+  become: yes
+  gather_facts: true
+  roles:
+   - ubuntu-xdebug

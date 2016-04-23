@@ -1,0 +1,33 @@
+---
+# Pass in a comma-separated list of repos to use (e.g. "remi,epel").
+php_enablerepo: ""
+php_memory_limit: "256M"
+php_max_execution_time: "60"
+php_upload_max_filesize: "64M"
+php_apc_cache_by_default: "1"
+php_apc_shm_size: "96M"
+php_date_timezone: "Europe/Paris"
+php_enable_php_fpm: true
+
+php_conf_basepath: /etc/php/7.0
+
+php_conf_files:
+  - { name: php.ini, dest: /cli }
+  - { name: apc.ini, dest: /mods-available }
+
+php_mods:
+  - { name: apc.ini, dest: /cli,     size: 20 }
+
+php_packages:
+  - php
+  - php7.0-mysql
+  - php7.0-pgsql
+  - php7.0-mcrypt
+  - php7.0-curl
+  - php7.0-dev
+  - php7.0-gd
+  - php7.0-ldap
+  - php7.0-sqlite3
+  - php-apcu
+
+php_webserver_daemon: "nginx"

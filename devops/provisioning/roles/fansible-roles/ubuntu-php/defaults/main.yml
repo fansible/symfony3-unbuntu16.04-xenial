@@ -28,6 +28,7 @@ php_packages:
   - php7.0-gd
   - php7.0-ldap
   - php7.0-sqlite3
+  - php7.0-intl
   - php-apcu
 
 php_webserver_daemon: "nginx"
